@@ -1,0 +1,15 @@
+{
+    "name": "sysmake/mini-framework-mvc-php",
+    "authors": [
+        {
+            "name": "MarcioJCarvalho",
+            "email": "marciojosedecarvalho@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}
