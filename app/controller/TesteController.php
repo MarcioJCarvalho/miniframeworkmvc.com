@@ -2,11 +2,14 @@
 
 namespace app\controller;
 
+use app\core\Controller;
 
-class TesteController
+class TesteController extends Controller
 {
-    public function seta()
+    public function index()
     {
-        return ['nome' => 'Marcio'];
+        $this->load('home/main', [
+            'nome' => 'sysmake'
+        ]);
     }
 }
