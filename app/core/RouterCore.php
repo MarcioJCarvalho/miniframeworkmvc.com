@@ -77,8 +77,37 @@ class RouterCore{
                     $get['call']();
                 break;
                 }
+                else
+                {
+                    $this->executeController($get['call']);
+                }
             }
         }
+    }
+
+    private function executeController($get)
+    {
+        $ex = explode('@', $get);
+        if(!isset($ex[0]) || !isset($ex[1])){
+            (new \app\controller\MessageController)->message('Dados inválidos', 'Controller ou Method não encontado: '. $get, 404);
+            return;
+        }
+
+        $cont = 'app\\controller\\'.$ex[0];
+        if(!class_exists($cont)){
+            (new \app\controller\MessageController)->message('Dados inválidos', 'Controller não encontado: '. $get, 404);
+            return;
+        }
+
+        if(!method_exists($cont, $ex[1])){
+            (new \app\controller\MessageController)->message('Dados inválidos', 'Method não encontado: '. $get, 404);
+            return;
+        }
+
+        call_user_func_array([
+            new $cont,
+            $ex[1]
+        ], []);
     }
 
     public function normalizeURI($arr)
