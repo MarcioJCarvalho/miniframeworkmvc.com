@@ -14,13 +14,13 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{BASE}}cep">CEP</a>
+        <a class="nav-link" href="{{BASE}}/cep">CEP</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{BASE}}quem-somos">Quem Somos</a>
+        <a class="nav-link" href="{{BASE}}/quem-somos">Quem Somos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{BASE}}contato">Contato</a>
+        <a class="nav-link" href="{{BASE}}/contato">Contato</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
